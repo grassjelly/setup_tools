@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -e
+
+echo -n "This script will install utility packages and write on your .bashrc. Do you want to continue (y/n)? "
+read answer
+
+if [ "$answer" != "${answer#[Nn]}" ] ;
+    then
+        exit
+fi
+
+# Install PlatformIo
+python3 -c "$(curl -fsSL https://raw.githubusercontent.com/platformio/platformio/master/scripts/get-platformio.py)"
+echo "PATH=\"\$PATH:\$HOME/.platformio/penv/bin\"" >> $HOME/.bashrc
+
