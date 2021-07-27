@@ -16,5 +16,8 @@ echo "PATH=\"\$PATH:\$HOME/.platformio/penv/bin\"" >> $HOME/.bashrc
 
 sudo apt install -y python3-pyudev
 
+wget https://www.pjrc.com/teensy/00-teensy.rules
+sudo cp 00-teensy.rules /etc/udev/rules.d/
+
 echo "Installation complete! Run the following to update the changes made:"
 echo "source ~/.bashrc"
